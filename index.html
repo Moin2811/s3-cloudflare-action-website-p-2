@@ -5,10 +5,99 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zainaluxe | Luxury Abayas & Modest Fashion</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #222;
+      text-align: center;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 600px;
+      object-fit: cover;
+    }
+
+    header h1 {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .tagline {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+
+    /* Responsive text for mobile and TV */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .tagline { font-size: 1rem; }
+    }
+    @media (min-width: 1200px) {
+      header h1 { font-size: 4rem; }
+      .tagline { font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
   <header>
-          <img src= "https://safa.store/cdn/shop/files/safa-creatives2.jpg?v=1723533472&width=2000"alt = "Abaya image" height="600">
+    <img src="https://safa.store/cdn/shop/files/safa-creatives2.jpg?v=1723533472&width=2000" alt="Abaya image">
     <h1>ZAINALUXE</h1>
     <p class="tagline">WHERE ELEGANCE MEETS MODESTY</p>
   </header>
@@ -16,25 +105,72 @@
   <main>
     <section class="card">
       <h2>About Us</h2>
-      <p>At ZAINALUXE, we believe that modesty and elegance go hand in hand. Our collection of abayas is thoughtfully designed to blend timeless tradition with modern sophistication, offering styles that suit every occasion — from everyday wear to special events.
-
-Each piece is crafted with care, using high-quality fabrics, meticulous tailoring, and attention to detail to ensure comfort, durability, and beauty in every stitch. We take pride in celebrating cultural heritage while embracing contemporary fashion trends, so you can express your individuality with confidence and grace.
-
-Whether you prefer classic silhouettes or contemporary cuts, our mission is to provide abayas that empower women to feel elegant, modest, and effortlessly stylish.</p>
-      <button id="Shop now">Shop now</button>
+      <p>
+        At ZAINALUXE, we believe that modesty and elegance go hand in hand. Our collection of abayas is thoughtfully designed to blend timeless tradition with modern sophistication.
+      </p>
+      <button id="shopNow">Shop now</button>
       <p id="msg"></p>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4snINaFDHsitD6bwpfN4dMDvEDlQhWVvBw&s"alt ="abayas" height="200">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4snINaFDHsitD6bwpfN4dMDvEDlQhWVvBw&s" alt="abayas">
     </section>
-  
+
+    <!-- Frame rate control -->
+    <section class="card">
+      <h2>Adjust Animation Speed</h2>
+      <label for="fps">Frame Rate (FPS):</label>
+      <input type="range" id="fps" min="1" max="60" value="30">
+      <p id="fpsValue">30 FPS</p>
+      <canvas id="animationCanvas" width="400" height="200"></canvas>
+    </section>
+  </main>
+
   <footer>
     <small>© Moin Mohammed</small>
   </footer>
 
   <script>
-    document.getElementById('Shop now').addEventListener('click', () => {
-      document.getElementById('msg').textContent = 'Shop stylish and elegant Abayas, Hijabs, and Khimar designs collection at ZainaLuxe. Browse through our collection of premium abayas.';
+    // Shop button
+    document.getElementById('shopNow').addEventListener('click', () => {
+      document.getElementById('msg').textContent =
+        'Shop stylish and elegant Abayas, Hijabs, and Khimar designs collection at ZainaLuxe.';
     });
+
+    // Frame rate animation
+    const canvas = document.getElementById("animationCanvas");
+    const ctx = canvas.getContext("2d");
+    let fps = 30;
+    let x = 0;
+
+    const fpsInput = document.getElementById("fps");
+    const fpsValue = document.getElementById("fpsValue");
+
+    fpsInput.addEventListener("input", () => {
+      fps = parseInt(fpsInput.value);
+      fpsValue.textContent = fps + " FPS";
+    });
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "black";
+      ctx.beginPath();
+      ctx.arc(x, 100, 20, 0, Math.PI * 2);
+      ctx.fill();
+
+      x += 2;
+      if (x > canvas.width) x = 0;
+    }
+
+    let then = performance.now();
+    function animate(now) {
+      requestAnimationFrame(animate);
+      const interval = 1000 / fps;
+      if (now - then > interval) {
+        then = now;
+        draw();
+      }
+    }
+    animate();
   </script>
 </body>
 </html>
+
 
