@@ -3,7 +3,8 @@
 # 🚀 Scalable Static Website with S3 + Cloudflare + GitHub Actions
 
 ## 📌 Project Overview
-This project demonstrates how to **host and deploy a static website** using:
+
+This project demonstrates how to host and deploy a static website using:
 
 * **AWS S3** for storage & static hosting
 * **Cloudflare** for DNS, CDN, caching, and free SSL
