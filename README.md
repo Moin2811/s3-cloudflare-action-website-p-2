@@ -50,7 +50,7 @@ Whenever I push code to GitHub, my website automatically updates on **S3** and C
 
 ### 4. GitHub Actions Workflow
 
-* Added `.github/workflows/deploy.yml` with steps:
+* Added `.github/workflows/deploy.yml with steps:
 
   1. Checkout code
   2. Configure AWS credentials
