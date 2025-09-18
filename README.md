@@ -94,7 +94,12 @@ Whenever I push code to GitHub, my website automatically updates on **S3** and C
 <img width="1917" height="1017" alt="Screenshot 2025-09-16 192437" src="https://github.com/user-attachments/assets/bc6acf5e-cc18-4d26-a955-e6484dcd518e" />
 <img width="1918" height="1016" alt="Screenshot 2025-09-18 203055" src="https://github.com/user-attachments/assets/18fa0297-5c6b-45b0-b317-ed98b7eb5d25" />
 <img width="1918" height="1015" alt="Screenshot 2025-09-16 193005" src="https://github.com/user-attachments/assets/6d33073f-0987-47cd-b622-4f4104b5cdbf" />
-<img width="1913" height="1002" alt="Screenshot 2025-09-16 193412" src="https://github.com/user-attachments/assets/0d4b9550-cefd-405a-b1a5-9efe345ab8f9" />
+<img width="1919" height="1019" alt="Screenshot 2025-09-18 193542" src="https://github.com/user-attachments/assets/4a15c2a6-d692-4322-8531-fcb718de7d4c" />
+<img width="1919" height="1002" alt="Screenshot 2025-09-18 203413" src="https://github.com/user-attachments/assets/0e3ce798-b30f-4312-8e62-e7a6ad679500" />
+<img width="1919" height="996" alt="Screenshot 2025-09-18 203431" src="https://github.com/user-attachments/assets/350017dc-0023-49c4-8220-802bf0d106ec" />
+
+
+
 
 ---
 
