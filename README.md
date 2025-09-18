@@ -112,3 +112,5 @@ This project shows how to build a **scalable, cost-effective static website host
 ✨ Future improvements could include GitHub OIDC for secure deployments, cache-busting for assets, and adding staging environments.
 
 ---
+## Click here to open 
+https://zainaluxe.shop/
