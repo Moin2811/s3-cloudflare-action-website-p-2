@@ -68,7 +68,7 @@ Whenever I push code to GitHub, my website automatically updates on **S3** and C
 
 * Edited `index.html`, committed & pushed.
 * GitHub Actions ran and deployed files.
-* Site updated instantly on `https://yourdomain.com`.
+* Site updated instantly on `https://zainaluxe.shop`.
 
 ---
 
